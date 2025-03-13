@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+  color: burgundy;
+  font-family: Arial, sans-serif;
+}
+
+.video-grid {
+  display: flex;
+  gap: 10px;
+}
+
+.video-card img {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
+.video-player {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: white;
+  padding: 20px;
+}
