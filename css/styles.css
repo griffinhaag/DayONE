@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f4f0;
+  color: #3c0d0d;
+}
+
+header {
+  background-color: #800020;
+  color: #fff;
+  padding: 1rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.login-button {
+  background-color: #fff;
+  color: #800020;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
+  max-width: 960px;
+}
+
+input[type="text"], select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.video-card {
+  width: 320px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.video-card:hover {
+  transform: scale(1.02);
+}
+
+.video-card iframe {
+  border-radius: 10px;
+}
+
+.video-title {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.video-desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+.auth-container, .admin-panel {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.auth-container form,
+.admin-panel form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-container input,
+.admin-panel input,
+.admin-panel select {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.auth-container button,
+.admin-panel button {
+  background-color: #800020;
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout-button {
+  float: right;
+  margin: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
