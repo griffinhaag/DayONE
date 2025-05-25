@@ -1,14 +1,33 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f8f4f0;
-  color: #3c0d0d;
+  background-color: #1e1e1e;
+  color: #f2f2f2;
 }
 
 header {
   background-color: #800020;
   color: #fff;
   padding: 1rem;
+}
+
+.navbar-brand,
+.navbar-text,
+.navbar .btn {
+  color: #fff !important;
+}
+
+.navbar .btn-login {
+  background-color: #343a40;
+  color: #fff !important;
+  padding: 0.4rem 0.75rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.navbar .btn-login:hover {
+  background-color: #495057;
 }
 
 .header-container {
@@ -20,8 +39,8 @@ header {
 }
 
 .login-button {
-  background-color: #fff;
-  color: #800020;
+  background-color: #343a40;
+  color: #fff;
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 5px;
@@ -37,28 +56,38 @@ header {
   max-width: 960px;
 }
 
-input[type="text"], select {
-  padding: 0.5rem;
+input[type="text"],
+input[type="password"],
+input[type="url"],
+select,
+textarea {
+  padding: 0.6rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #ffffff;
 }
 
 .video-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   padding: 2rem;
 }
 
 .video-card {
-  width: 320px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #2e2e2e;
+  border: 1px solid #444;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.2s;
+  color: #fff;
 }
 
 .video-card:hover {
@@ -66,51 +95,72 @@ input[type="text"], select {
 }
 
 .video-card iframe {
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 
 .video-title {
   font-weight: bold;
   margin-top: 0.5rem;
+  color: #fff;
 }
 
 .video-desc {
   font-size: 0.9rem;
-  color: #555;
+  color: #ccc;
+  margin-top: 0.3rem;
 }
 
+.video-card .badge {
+  margin-right: 0.5rem;
+}
 
-.auth-container, .admin-panel {
-  max-width: 400px;
+.auth-container,
+.admin-panel,
+.user-panel {
+  max-width: 600px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  background-color: #2e2e2e;
+  border: 1px solid #555;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .auth-container form,
-.admin-panel form {
+.admin-panel form,
+.user-panel form {
   display: flex;
   flex-direction: column;
 }
 
 .auth-container input,
 .admin-panel input,
-.admin-panel select {
+.user-panel input,
+.admin-panel select,
+.user-panel select,
+textarea {
   margin-bottom: 1rem;
   padding: 0.5rem;
   font-size: 1rem;
 }
 
 .auth-container button,
-.admin-panel button {
+.admin-panel button,
+.user-panel button {
   background-color: #800020;
   color: #fff;
   border: none;
   padding: 0.75rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.auth-container button:hover,
+.admin-panel button:hover,
+.user-panel button:hover {
+  background-color: #a0002c;
 }
 
 .logout-button {
@@ -118,4 +168,52 @@ input[type="text"], select {
   margin: 1rem;
   color: #fff;
   text-decoration: none;
+}
+
+/* User Table Styles */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.user-table th,
+.user-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #666;
+  color: #fff;
+}
+
+.user-table th {
+  background-color: #800020;
+}
+
+.user-table tbody tr:hover {
+  background-color: #4c4c4c;
+}
+
+/* Pagination Buttons */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.75rem;
+}
+
+.pagination button {
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.pagination button:hover {
+  background-color: #495057;
+}
+
+.pagination button.active {
+  background-color: #800020;
 }

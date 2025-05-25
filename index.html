@@ -2,39 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YouTube Shorts Hub</title>
+  <title>DayONE</title>
+  <link rel="stylesheet" href="css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <nav class="navbar navbar-dark bg-danger px-4">
-    <a class="navbar-brand" href="index.html">Home</a>
-    <div id="navbar-user" class="ms-auto">
-      <a href="credentials/login.html" class="btn btn-light">Login</a>
+  <header class="d-flex justify-content-between align-items-center px-4 py-3" style="background-color:#800020;">
+    <h4 class="text-white m-0">DayONE</h4>
+    <div>
+      <a id="authButton" href="credentials/login.html" class="btn btn-dark text-white">Login</a>
     </div>
-  </nav>
+  </header>
 
-  <div class="container my-4">
-    <div class="row mb-3">
-      <div class="col-md-4">
-        <select id="platformFilter" class="form-select">
-          <option value="">All Platforms</option>
-          <option value="windows">Windows</option>
-          <option value="mac">Mac</option>
-          <option value="linux">Linux</option>
-        </select>
-      </div>
-      <div class="col-md-8">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search by title or description...">
-      </div>
-    </div>
-    <div id="videoContainer" class="row gy-4">
-      <!-- Videos will be dynamically inserted here -->
-    </div>
+  <div class="filters my-4 px-4 d-flex flex-wrap justify-content-center gap-3">
+    <select id="platformFilter" class="form-select w-auto">
+      <option value="">All Platforms</option>
+    </select>
+    <select id="categoryFilter" class="form-select w-auto">
+      <option value="">All Categories</option>
+    </select>
+    <input type="text" id="searchInput" class="form-control w-50" placeholder="Search by title or description...">
   </div>
 
-  <script src="js/auth.js"></script>
+  <div class="video-grid px-4" id="videoGrid"></div>
+  <div class="d-flex justify-content-center my-4" id="pagination"></div>
+
   <script src="js/script.js"></script>
+  <script>
+    const userRole = localStorage.getItem('userRole');
+    const authBtn = document.getElementById('authButton');
+
+    if (localStorage.getItem('loggedInUser')) {
+      authBtn.textContent = 'Dashboard';
+      authBtn.href = userRole === 'admin' ? 'credentials/admin.html' : 'credentials/user.html';
+    } else {
+      authBtn.textContent = 'Login';
+      authBtn.href = 'credentials/login.html';
+    }
+  </script>
 </body>
 </html>

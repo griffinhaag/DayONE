@@ -1,0 +1,8 @@
+[
+  {
+    "username": "griffin",
+    "password": "hashedvalue",
+    "role": "admin",
+    "securityCode": "mycode123"
+  }
+]
